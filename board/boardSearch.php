@@ -15,7 +15,7 @@ $searchOption = $_GET['searchOption'];
 $searchKeyword = $connect-> real_escape_string(trim($searchKeyword));
 $searchOption = $connect-> real_escape_string(trim($searchOption));
 
-//검색에 맞는게시판 불러오기
+//검색에 맞는 게시판 불러오기
 $sql = "SELECT  b.boardID, b.boardTitle, b.boardContents, m.youName, b.regTime, b.boardView FROM board b JOIN members m ON(b.memberID = m.memberID) ";
 // //제목에서 내가 쓴 키워드 찾기
 // $sql = "SELECT  b.boardID, b.boardTitle, b.boardContents, m.youName, b.regTime, b.boardView FROM board b JOIN members m ON(b.memberID = m.memberID) WHERE b.boardTitle LIKE '%{$searchKeyword}' ORDER BY boardID DESC";
